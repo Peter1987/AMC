@@ -452,7 +452,6 @@ class MyFrame(wx.Frame):
         try:
             img2 = img.Scale(r("nrow(hMat)")[0],r("nrow(hMat)")[0])
         except:
-            print "fail"
             pass
         img = img.Scale(NewW,NewH)
         self.img2 = img2
