@@ -121,7 +121,7 @@ class MyFrame(wx.Frame):
         #self.infotext.SetLabel("X = " + str(event.GetX()) + "\n" + "Y = " + str(event.GetY()))
         try:
             text = r('''
-            hMat[{0},{1}]
+            try(hMat[{0},{1}],silent = TRUE)
             '''.format(event.GetX(),event.GetX()))
             self.infotext.SetLabel(str(text))
         except:
@@ -450,9 +450,9 @@ class MyFrame(wx.Frame):
             NewW2 = self.PhotoMaxSizeBig
             NewH2 = self.PhotoMaxSizeBig * W / H
         try:
-            img2 = img.Scale(r("nrow(hMat)")[0],r("nrow(hMat)")[0])
+            img2 = img.Scale(r("try(nrow(hMat),silent = TRUE")[0],r("try(nrow(hMat),silent = TRUE")[0])
         except:
-            pass
+            img2 = img.Scale(NewW2,NewH2)
         img = img.Scale(NewW,NewH)
         self.img2 = img2
         self.img = img

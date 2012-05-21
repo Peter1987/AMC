@@ -22,7 +22,9 @@ class Rplot():
 class Hilbert():
     def __init__(self):
         r('''library( HilbertVisGUI )
+        print (1)
         vec <- makeRandomTestData( )
+        print (2)
         #pushViewport( viewport( layout=grid.layout( 2, 2 ) ) )
         #for( i in 1:4 ) {
         #    pushViewport( viewport(
@@ -31,16 +33,27 @@ class Hilbert():
         #    popViewport( )
         #}
         l = log(length(vec),4)
+        print (3)
         hMat <- hilbertImage( vec ,l)
+        print (4)
         png("temp/HGui.png",width=6+2/3, height=6+2/3, units="in", res=600)
+        print (5)
         palettePos = colorRampPalette(c("white", "red"))(300)
+        print (6)
         paletteNeg = colorRampPalette(c("white", "blue"))(300)
-        p <- levelplot(hMat,col.regions = c(rev(paletteNeg), palettePos)) 
-        grid.newpage() 
-        pushViewport(viewport(xscale = p$x.limits, yscale = p$y.limits)) 
-        do.call(panel.levelplot, trellis.panelArgs(p, 1)) 
+        print (7)
+        p <- levelplot(hMat,col.regions = c(rev(paletteNeg), palettePos))
+        print (8)
+        grid.newpage()
+        print (9)
+        pushViewport(viewport(xscale = p$x.limits, yscale = p$y.limits))
+        print (10)
+        do.call(panel.levelplot, trellis.panelArgs(p, 1))
+        print (11)
         showHilbertImage( hMat )
+        print (12)
         dev.off()
+        print (13)
         #showHilbertImage( hMat, mode="EBImage" )''')
 
 class ShowCircos():
