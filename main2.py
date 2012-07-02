@@ -176,6 +176,7 @@ class MyFrame(wx.Frame):
             
     
     def OnPaint(self, event):
+        print "b[la"
         self.scaletup = 1
         self.picturepos = [0,0]
         self.img4 = wx.BitmapFromImage(self.img2)
@@ -450,7 +451,7 @@ class MyFrame(wx.Frame):
             NewW2 = self.PhotoMaxSizeBig
             NewH2 = self.PhotoMaxSizeBig * W / H
         try:
-            img2 = img.Scale(r("try(nrow(hMat),silent = TRUE")[0],r("try(nrow(hMat),silent = TRUE")[0])
+            img2 = img.Scale(r("try(nrow(hMat),silent = TRUE)")[0],r("try(nrow(hMat),silent = TRUE)")[0])
         except:
             img2 = img.Scale(NewW2,NewH2)
         img = img.Scale(NewW,NewH)
