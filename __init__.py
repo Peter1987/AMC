@@ -368,7 +368,7 @@ class MyFrame(wx.Frame):
         text = r('''
         hMat[{0},{1}]
         '''.format(self.__coorx[e.GetX()]+1,self.__coory[e.GetY()]+1))
-        text = text.replace("[1]", ""+":  ")
+        text = str(text).replace("[1]", ""+":  ")
         self.__infot.SetLabel(str(text))
         
     '''
@@ -468,7 +468,7 @@ class MyFrame(wx.Frame):
         
         
     def SetupPics(self):
-        bmp = wx.Bitmap("/home/peter/SNP Visualisator/temp/HGui.png", wx.BITMAP_TYPE_ANY)
+        bmp = wx.Bitmap("temp/HGui.png", wx.BITMAP_TYPE_ANY)
         self.largeimagesize = [bmp.GetHeight(),bmp.GetWidth()]
         self.smallimagesize = [self.largeimagesize[0]/2,self.largeimagesize[1]/2]
         bitmap = scale_bitmap(bmp,self.smallimagesize[0],self.smallimagesize[1])
